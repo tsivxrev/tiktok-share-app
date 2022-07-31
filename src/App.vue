@@ -55,7 +55,7 @@ window.state = state;
 </script>
 
 <template>
-  <div class="main flex flex-col items-center h-screen w-screen px-4 py-6 gap-4 bg-neutral-900">
+  <div class="main flex flex-col items-center h-screen w-screen px-4 py-6 gap-4 overflow-x-hidden">
     <div class="header w-full max-w-xl rounded-md">
       <div class="header-title text-lg font-bold text-white">
         TikTok Share (Beta)
@@ -78,8 +78,8 @@ window.state = state;
       <div class="message text-neutral-500">{{state.error_message}}</div>
       <div class="details font-mono text-sm text-neutral-500">{{state.error_details}}</div>
     </div>
-    <div v-if="state.video.status === 'success'" class="video w-full max-w-xl rounded-md text-white bg-neutral-800 p-2 flex gap-3">
-      <video controls class="video flex-grow w-full rounded-md" :src="state.video.nwm_video_url"></video>
+    <div v-if="state.video.status === 'success'" class="video w-full max-w-xl flex-wrap rounded-md text-white bg-neutral-800 p-2 flex gap-3">
+      <video controls class="video flex-grow w-full max-h-96 rounded-md" :src="state.video.nwm_video_url"></video>
       <div class="details flex flex-col gap-8 justify-between">
         <div class="top flex flex-col gap-2">
         <div class="title">{{ state.video.video_title }}</div>
